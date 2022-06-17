@@ -10,15 +10,15 @@ const UsageStepsModal = ({ isOpen, onClose }) => {
       <ModalBody>
         <Text paddingBottom={3}>Place your order with these simple steps:</Text>
         <List spacing={3}>
-          <ListItem>
+          <ListItem display="flex" alignItems="start">
             <ListIcon as={CheckCircleIcon} color="green.500" />
             Search and choose the products you want
           </ListItem>
-          <ListItem>
+          <ListItem display="flex" alignItems="start">
             <ListIcon as={CheckCircleIcon} color="green.500" />
             Review and complete the details of your order
           </ListItem>
-          <ListItem>
+          <ListItem display="flex" alignItems="start">
             <ListIcon as={CheckCircleIcon} color="green.500" />
             Ready! We will take care of sending your order via Whatsapp to your favorite company
           </ListItem>

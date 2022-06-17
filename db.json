@@ -4,14 +4,23 @@
       "name": "Sarcletti",
       "description": "Sarcletti nació en Perú hace más de 20 años, como una heladería-cafetería de calidad",
       "address": "Av. Javier Prado Este 2060",
-      "placeService": "San Borja - Lima",
+      "servicePlace": "San Borja - Lima",
       "attentionSchedule": [
         {
-          "Lunes a Domingo": "9:00 a 22:00"
+          "day": "Lunes a Domingo",
+          "schedule": "9:00 a 22:00"
         }
       ],
-      "facebookUrl": "https://www.facebook.com/SarclettiOficial/",
-      "instagramUrl": "https://www.instagram.com/sarcletti.oficial/",
+      "socialNetworks": [
+        {
+          "type": "fb",
+          "url": "https://www.facebook.com/SarclettiOficial/"
+        },
+        {
+          "type": "ig",
+          "url": "https://www.instagram.com/sarcletti.oficial/"
+        }
+      ],
       "orders": [],
       "productCategories": [
         {

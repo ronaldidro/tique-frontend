@@ -1,22 +1,31 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import { Box, Input, InputGroup, InputLeftElement, Select } from '@chakra-ui/react'
+import PropTypes from 'prop-types'
 
-const Filters = () => {
+const Filters = ({ categories }) => {
+  if (!categories) return null
+
   return (
     <Box display={{ md: 'flex' }} marginY={2}>
       <InputGroup width={['100%', '65%']} marginRight={[0, 2]} marginBottom={[2, 0]}>
         <InputLeftElement pointerEvents="none">
           <SearchIcon />
         </InputLeftElement>
-        <Input placeholder="Search product" />
+        <Input placeholder="Buscar producto" />
       </InputGroup>
-      <Select placeholder="Categories" width={['100%', '35%']}>
-        <option value="option1">Category 1</option>
-        <option value="option2">Category 2</option>
-        <option value="option3">Category 3</option>
+      <Select placeholder="Categorias" width={['100%', '35%']}>
+        {categories.map(category => (
+          <option key={category.id} value={category.id}>
+            {category.description}
+          </option>
+        ))}
       </Select>
     </Box>
   )
+}
+
+Filters.propTypes = {
+  categories: PropTypes.array
 }
 
 export default Filters
