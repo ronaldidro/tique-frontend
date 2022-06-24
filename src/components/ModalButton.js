@@ -20,11 +20,11 @@ const ModalButton = ({ label, modalTitle, modalChildren, modalFooter, modalSize 
 }
 
 ModalButton.propTypes = {
-  label: PropTypes.func,
-  modalTitle: PropTypes.element,
+  label: PropTypes.string,
+  modalTitle: PropTypes.string,
   modalChildren: PropTypes.element,
   modalFooter: PropTypes.element,
-  modalSize: PropTypes.string
+  modalSize: PropTypes.node
 }
 
 export default ModalButton

@@ -1,12 +1,11 @@
 import { Box, Flex, Heading, Image, Spacer, Tag, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { convertToPercent, getDiscountedPrice } from '../utils'
-import ProductDetail from './ProductDetail'
 import ProductDetailModal from './ProductDetailModal'
 
 const Product = ({ productData }) => {
   return (
-    <Flex shadow="md" borderWidth="1px" borderRadius="md">
+    <Flex shadow="md" borderWidth="1px" borderRadius="xl">
       <Flex flexDirection="column" justifyContent="space-between" padding={3} width="full">
         <Box>
           <Flex justifyContent="space-between">
@@ -18,9 +17,7 @@ const Product = ({ productData }) => {
           <Text noOfLines={2}>{productData.description}</Text>
         </Box>
         <Flex alignItems="center">
-          <ProductDetailModal>
-            <ProductDetail productData={productData} />
-          </ProductDetailModal>
+          <ProductDetailModal productData={productData} />
           <Spacer />
           {productData.discount > 0 && (
             <Text as="del" paddingRight={2}>
@@ -30,7 +27,13 @@ const Product = ({ productData }) => {
           <Text>$ {getDiscountedPrice(productData.price, productData.discount)}</Text>
         </Flex>
       </Flex>
-      <Image boxSize="130px" objectFit="cover" src="https://bit.ly/kent-c-dodds" alt="Dan Abramov" />
+      <Image
+        borderInlineEndRadius="xl"
+        boxSize="130px"
+        objectFit="cover"
+        src="https://bit.ly/kent-c-dodds"
+        alt="Dan Abramov"
+      />
     </Flex>
   )
 }

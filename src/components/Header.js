@@ -60,7 +60,7 @@ const Header = ({ companyData }) => {
 }
 
 Header.propTypes = {
-  companyData: PropTypes.object
+  companyData: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
 export default Header

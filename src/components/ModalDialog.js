@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ModalDialog = ({ children, size = 'md', isOpen, onClose }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size={size}>
+    <Modal isOpen={isOpen} onClose={onClose} size={size} isCentered>
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />
@@ -14,9 +14,9 @@ const ModalDialog = ({ children, size = 'md', isOpen, onClose }) => {
 }
 
 ModalDialog.propTypes = {
-  children: PropTypes.element,
-  size: PropTypes.string,
-  isOpen: PropTypes.func,
+  children: PropTypes.node,
+  size: PropTypes.node,
+  isOpen: PropTypes.bool,
   onClose: PropTypes.func
 }
 

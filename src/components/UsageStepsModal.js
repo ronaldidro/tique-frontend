@@ -34,8 +34,8 @@ const UsageStepsModal = ({ isOpen, onClose }) => {
 }
 
 UsageStepsModal.propTypes = {
-  isOpen: PropTypes.func,
-  onClose: PropTypes.element
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func
 }
 
 export default UsageStepsModal
