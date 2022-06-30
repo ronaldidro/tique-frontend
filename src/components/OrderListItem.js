@@ -13,12 +13,10 @@ import {
   NumberInputField,
   NumberInputStepper,
   Spacer,
-  Tag,
   Text
 } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { deleteProduct, updateProduct } from '../reducers/productsOrderReducer'
-import { convertToPercent } from '../utils'
 import AlertIconButton from './AlertIconButton'
 import { useRef } from 'react'
 
@@ -53,12 +51,7 @@ const OrderListItem = ({ productData }) => {
           <Box paddingLeft={2}>
             <Text>{productData.name}</Text>
             <HStack>
-              <Text>
-                $ {productData.price} $ {productData.discountedPrice}
-              </Text>
-              {productData.discount > 0 && (
-                <Tag colorScheme="messenger">- {convertToPercent(productData.discount)}</Tag>
-              )}
+              <Text>$ {productData.discountedPrice}</Text>
             </HStack>
           </Box>
         </Box>

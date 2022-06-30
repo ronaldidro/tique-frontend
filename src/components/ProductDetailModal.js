@@ -2,13 +2,15 @@ import { useDispatch } from 'react-redux'
 import { IconButton, ModalBody, useDisclosure } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 import PropTypes from 'prop-types'
-import { addProduct } from '../reducers/productsOrderReducer'
+import { addProduct, updateProduct } from '../reducers/productsOrderReducer'
+import { getProductOrderById } from '../utils'
 import ModalDialog from './ModalDialog'
 import ProductDetail from './ProductDetail'
 
 const ProductDetailModal = ({ productData }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const dispatch = useDispatch()
+  const productInOrder = getProductOrderById(productData.id)
 
   const addOrderProduct = event => {
     event.preventDefault()
@@ -19,7 +21,7 @@ const ProductDetailModal = ({ productData }) => {
 
     const productOrder = { ...productData, quantity, discountedPrice, totalPrice }
 
-    dispatch(addProduct(productOrder))
+    dispatch(productInOrder ? updateProduct(productOrder) : addProduct(productOrder))
 
     onClose()
   }

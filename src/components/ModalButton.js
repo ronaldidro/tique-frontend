@@ -2,7 +2,15 @@ import { Box, Button, ModalBody, ModalFooter, ModalHeader, useDisclosure } from 
 import PropTypes from 'prop-types'
 import ModalDialog from './ModalDialog'
 
-const ModalButton = ({ label, modalTitle, modalChildren, modalFooter, modalSize = 'md', ...props }) => {
+const ModalButton = ({
+  label,
+  modalTitle,
+  modalChildren,
+  modalFooter,
+  modalSize = 'md',
+  modalCentered = true,
+  ...props
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -10,7 +18,7 @@ const ModalButton = ({ label, modalTitle, modalChildren, modalFooter, modalSize 
       <Button onClick={onOpen} {...props}>
         {label}
       </Button>
-      <ModalDialog isOpen={isOpen} onClose={onClose} size={modalSize}>
+      <ModalDialog isOpen={isOpen} onClose={onClose} size={modalSize} isCentered={modalCentered}>
         <ModalHeader>{modalTitle}</ModalHeader>
         <ModalBody>{modalChildren}</ModalBody>
         <ModalFooter>{modalFooter}</ModalFooter>
@@ -24,7 +32,8 @@ ModalButton.propTypes = {
   modalTitle: PropTypes.string,
   modalChildren: PropTypes.element,
   modalFooter: PropTypes.element,
-  modalSize: PropTypes.node
+  modalSize: PropTypes.node,
+  modalCentered: PropTypes.bool
 }
 
 export default ModalButton

@@ -17,51 +17,47 @@ const OrderSectionTitle = ({ title, icon }) => {
 const OrderForm = () => {
   return (
     <>
-      <OrderSectionTitle title="Contact" icon={<RepeatIcon />} />
+      <OrderSectionTitle title="Contacto" icon={<RepeatIcon />} />
       <HStack paddingBottom={4}>
         <FormControl isRequired>
-          <FormLabel htmlFor="first-name">First name</FormLabel>
+          <FormLabel htmlFor="first-name">Nombres</FormLabel>
           <Input id="first-name" />
         </FormControl>
         <FormControl isRequired>
-          <FormLabel htmlFor="last-name">Last name</FormLabel>
+          <FormLabel htmlFor="last-name">Apellidos</FormLabel>
           <Input id="last-name" />
         </FormControl>
       </HStack>
       <FormControl isRequired paddingBottom={4}>
-        <FormLabel htmlFor="Address">Address</FormLabel>
+        <FormLabel htmlFor="Address">Dirección</FormLabel>
         <Input id="address" />
       </FormControl>
-      <FormControl paddingBottom={4}>
-        <FormLabel htmlFor="cellphone">Cell phone number</FormLabel>
-        <Input type="tel" id="cellphone" />
-      </FormControl>
-      <OrderSectionTitle title="Order mode" icon={<RepeatIcon />} />
+      <OrderSectionTitle title="Modo de pedido" icon={<RepeatIcon />} />
       <FormControl as="fieldset" paddingBottom={4}>
         <RadioGroup defaultValue="Pickup">
           <HStack>
-            <Radio value="Pickup">Pickup</Radio>
-            <Radio value="Delivery">Delivery</Radio>
+            <Radio value="Pickup">Recojo en tienda</Radio>
+            <Radio value="Delivery">Entrega a domicilio</Radio>
           </HStack>
         </RadioGroup>
       </FormControl>
-      <OrderSectionTitle title="Order datetime" icon={<RepeatIcon />} />
+      <OrderSectionTitle title="Fecha y hora del pedido" icon={<RepeatIcon />} />
       <FormControl isRequired paddingBottom={4}>
-        <Input type="datetime-local" id="address" />
+        <Input type="datetime-local" id="datetime" />
       </FormControl>
-      <OrderSectionTitle title="Payment method" icon={<RepeatIcon />} />
+      <OrderSectionTitle title="Método de pago" icon={<RepeatIcon />} />
       <FormControl as="fieldset" paddingBottom={8}>
         <RadioGroup defaultValue="Cash">
           <HStack>
-            <Radio value="Cash">Cash</Radio>
-            <Radio value="Card">Card</Radio>
-            <Radio value="Wire transfer">Wire transfer</Radio>
+            <Radio value="Cash">Efectivo</Radio>
+            <Radio value="Card">Tarjeta</Radio>
+            <Radio value="Wire transfer">Transferencia bancaria</Radio>
           </HStack>
         </RadioGroup>
       </FormControl>
-      <Button width="full">Send Order</Button>
+      <Button width="full">Enviar Pedido</Button>
       <Box textAlign="center" paddingTop={4}>
-        <Text as="cite">Your order will be sent via Whatsapp</Text>
+        <Text as="cite">Su pedido será enviado a través de Whatsapp</Text>
       </Box>
     </>
   )

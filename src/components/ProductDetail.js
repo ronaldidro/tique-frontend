@@ -14,14 +14,15 @@ import {
   useNumberInput
 } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
-import { convertToPercent, getDiscountedPrice } from '../utils'
+import { convertToPercent, getDiscountedPrice, getProductOrderById } from '../utils'
 
 const ProductDetail = ({ productData, handleAddProduct }) => {
   const price = getDiscountedPrice(productData.price, productData.discount)
-  const [priceCalc, setPriceCalc] = useState(price)
+  const productOrder = getProductOrderById(productData.id)
+  const [priceCalc, setPriceCalc] = useState(productOrder ? productOrder.totalPrice.toFixed(2) : price)
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } = useNumberInput({
-    defaultValue: 1,
+    defaultValue: productOrder ? productOrder.quantity : 1,
     min: 1
   })
   const inc = getIncrementButtonProps()

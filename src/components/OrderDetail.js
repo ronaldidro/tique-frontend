@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { Badge, Divider, Flex, Heading, IconButton, Spacer } from '@chakra-ui/react'
+import { Badge, Divider, Flex, Heading, IconButton, Spacer, Text } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import ModalButton from './ModalButton'
 import OrderForm from './OrderForm'
 import OrderList from './OrderList'
+import { getProductsOrder } from '../utils'
 
 const OrderDetail = () => {
   const navigate = useNavigate()
-  const productsOrder = useSelector(state => state.productsOrder)
+  const productsOrder = getProductsOrder()
   const orderTotalPrice = productsOrder.reduce((acc, product) => acc + product.totalPrice, 0)
   const orderTotalItems = productsOrder.reduce((acc, product) => acc + product.quantity, 0)
 
@@ -21,19 +21,26 @@ const OrderDetail = () => {
         </Heading>
         <Spacer />
         <Flex gap={2}>
-          <Badge fontSize="md">Items : {orderTotalItems}</Badge>
-          <Badge fontSize="md">Total : $ {orderTotalPrice.toFixed(2)}</Badge>
+          <Text as="em">Items:</Text>
+          <Badge fontSize="md">{orderTotalItems}</Badge>
+          <Text as="em">Total:</Text>
+          <Badge fontSize="md" colorScheme="green">
+            $ {orderTotalPrice.toFixed(2)}
+          </Badge>
         </Flex>
       </Flex>
       <Divider />
       <OrderList productsOrder={productsOrder} />
-      <ModalButton
-        label="Finish Order"
-        marginY={5}
-        modalTitle="Enter your info"
-        modalChildren={<OrderForm />}
-        modalSize={['full', 'xl']}
-      />
+      {productsOrder.length > 0 && (
+        <ModalButton
+          label="Finalizar Pedido"
+          marginY={5}
+          modalTitle="Ingresa tu información"
+          modalChildren={<OrderForm />}
+          modalSize={['full', 'xl']}
+          modalCentered={false}
+        />
+      )}
     </>
   )
 }

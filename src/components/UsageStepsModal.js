@@ -5,7 +5,7 @@ import ModalDialog from './ModalDialog'
 
 const UsageStepsModal = ({ isOpen, onClose }) => {
   return (
-    <ModalDialog isOpen={isOpen} onClose={onClose}>
+    <ModalDialog isOpen={isOpen} onClose={onClose} isCentered>
       <ModalHeader>Welcome to Tique App</ModalHeader>
       <ModalBody>
         <Text paddingBottom={3}>Place your order with these simple steps:</Text>

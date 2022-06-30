@@ -24,7 +24,7 @@ Alert.propTypes = {
   children: PropTypes.node,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
-  cancelRef: PropTypes.element,
+  cancelRef: PropTypes.object,
   motionPreset: PropTypes.string
 }
 
