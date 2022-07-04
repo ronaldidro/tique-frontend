@@ -42,7 +42,7 @@ const Header = ({ companyData }) => {
         </Box>
         <Box position="absolute" top="0" right="0" marginY={7} marginRight={3}>
           <Stack direction="row">
-            {companyData.socialNetworks?.map(socialNetwork => (
+            {companyData.socialNetworks.map(socialNetwork => (
               <Link key={socialNetwork.type} href={socialNetwork.url} isExternal>
                 <RepeatIcon
                   boxSize={12}

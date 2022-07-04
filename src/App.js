@@ -9,7 +9,7 @@ const App = () => {
     <Container maxW="5xl">
       <Routes>
         <Route path="/" element={<MenuDashboard />} />
-        <Route path="/order" element={<OrderDetail />} />
+        <Route path="/pedido" element={<OrderDetail />} />
       </Routes>
       <Footer />
     </Container>

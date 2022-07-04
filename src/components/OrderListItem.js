@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { DeleteIcon } from '@chakra-ui/icons'
 import {
@@ -18,7 +19,6 @@ import {
 import PropTypes from 'prop-types'
 import { deleteProduct, updateProduct } from '../reducers/productsOrderReducer'
 import AlertIconButton from './AlertIconButton'
-import { useRef } from 'react'
 
 const OrderListItem = ({ productData }) => {
   const dispatch = useDispatch()

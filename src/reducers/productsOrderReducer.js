@@ -9,6 +9,9 @@ const productsOrderReducer = (state = [], action) => {
     case 'REMOVE_PRODUCT':
       return state.filter(product => product.id !== action.data.id)
 
+    case 'REMOVE_ALL_PRODUCTS':
+      return []
+
     default:
       return state
   }
@@ -32,6 +35,12 @@ export const deleteProduct = productData => {
   return {
     type: 'REMOVE_PRODUCT',
     data: productData
+  }
+}
+
+export const deleteAllProducts = () => {
+  return {
+    type: 'REMOVE_ALL_PRODUCTS'
   }
 }
 
