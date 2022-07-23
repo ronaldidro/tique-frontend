@@ -1,26 +1,24 @@
-import { Flex, Spinner, useDisclosure } from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { useResource } from '../hooks'
 import { getProductsOrder } from '../utils'
+import CircularSpinner from './CircularSpinner'
 import Filters from './Filters'
 import Header from './Header'
 import LinkButton from './LinkButton'
 import ProductCategories from './ProductCategories'
 import UsageStepsModal from './UsageStepsModal'
 
-const MenuDashboard = () => {
+const CompanyProducts = () => {
+  const { id } = useParams()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const productsOrder = getProductsOrder()
-  const company = useResource('/companies/628833ddae102b938986b124')
+  const company = useResource(`/companies/${id}`)
 
   useEffect(() => onOpen(), [])
 
-  if (!Object.keys(company).length)
-    return (
-      <Flex alignItems="center" justifyContent="center" height="container.md">
-        <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="green.500" size="xl" />
-      </Flex>
-    )
+  if (!Object.keys(company).length) return <CircularSpinner />
 
   return (
     <>
@@ -35,4 +33,4 @@ const MenuDashboard = () => {
   )
 }
 
-export default MenuDashboard
+export default CompanyProducts

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Box textAlign="right">
       <Divider />
-      <Text marginTop={2}>Powered by DidroTICs</Text>
+      <Text marginTop={2}>&copy; {new Date().getFullYear()} Hatun Tech. Todos los derechos reservados.</Text>
     </Box>
   )
 }

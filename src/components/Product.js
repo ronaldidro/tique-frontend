@@ -9,6 +9,13 @@ const Product = ({ productData }) => {
 
   return (
     <Flex shadow="md" borderWidth="1px" borderRadius="xl">
+      <Image
+        borderInlineStartRadius="xl"
+        boxSize="130px"
+        objectFit="cover"
+        src="https://bit.ly/kent-c-dodds"
+        alt="Dan Abramov"
+      />
       <Flex flexDirection="column" justifyContent="space-between" padding={3} width="full">
         <Box>
           <Flex justifyContent="space-between" alignItems="center">
@@ -21,23 +28,12 @@ const Product = ({ productData }) => {
           <Text noOfLines={2}>{productData.description}</Text>
         </Box>
         <Flex alignItems="center">
-          <ProductDetailModal productData={productData} />
+          <Text paddingRight={2}>$ {getDiscountedPrice(productData.price, productData.discount)}</Text>
+          {productData.discount > 0 && <Text as="del">$ {productData.price}</Text>}
           <Spacer />
-          {productData.discount > 0 && (
-            <Text as="del" paddingRight={2}>
-              $ {productData.price}
-            </Text>
-          )}
-          <Text>$ {getDiscountedPrice(productData.price, productData.discount)}</Text>
+          <ProductDetailModal productData={productData} />
         </Flex>
       </Flex>
-      <Image
-        borderInlineEndRadius="xl"
-        boxSize="130px"
-        objectFit="cover"
-        src="https://bit.ly/kent-c-dodds"
-        alt="Dan Abramov"
-      />
     </Flex>
   )
 }
