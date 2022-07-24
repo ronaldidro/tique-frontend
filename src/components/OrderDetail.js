@@ -14,7 +14,7 @@ const OrderDetail = () => {
   return (
     <>
       <Flex alignItems="center" paddingY={4}>
-        <IconButton icon={<ChevronLeftIcon />} onClick={() => navigate('/')} />
+        <IconButton icon={<ChevronLeftIcon />} onClick={() => navigate(-1)} />
         <Heading size="md" paddingLeft={4}>
           Tu Pedido
         </Heading>
@@ -30,7 +30,13 @@ const OrderDetail = () => {
       </Flex>
       <Divider />
       <OrderList productsOrder={productsOrder} />
-      {productsOrder.length > 0 && <OrderFormButton />}
+      {productsOrder.length > 0 ? (
+        <OrderFormButton />
+      ) : (
+        <Text textAlign="center" fontWeight="bold" marginY={5}>
+          No se encontraron productos
+        </Text>
+      )}
     </>
   )
 }
