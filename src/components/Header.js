@@ -24,7 +24,7 @@ const Header = ({ companyData }) => {
             <AttentionSchedule
               attentionDays={companyData.attentionSchedule}
               address={companyData.address}
-              servicePlace={companyData.servicePlace}
+              placeService={companyData.placeService}
             />
           }
         />

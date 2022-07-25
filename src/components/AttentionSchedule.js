@@ -2,7 +2,7 @@ import { RepeatIcon } from '@chakra-ui/icons'
 import { Box, Flex, HStack, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
-const AttentionSchedule = ({ attentionDays, address, servicePlace }) => {
+const AttentionSchedule = ({ attentionDays, address, placeService }) => {
   return (
     <Box>
       <Box paddingY={2}>
@@ -19,7 +19,7 @@ const AttentionSchedule = ({ attentionDays, address, servicePlace }) => {
       </HStack>
       <HStack>
         <RepeatIcon />
-        <Text>{servicePlace}</Text>
+        <Text>{placeService}</Text>
       </HStack>
     </Box>
   )
@@ -28,7 +28,7 @@ const AttentionSchedule = ({ attentionDays, address, servicePlace }) => {
 AttentionSchedule.propTypes = {
   attentionDays: PropTypes.array,
   address: PropTypes.string,
-  servicePlace: PropTypes.string
+  placeService: PropTypes.string
 }
 
 export default AttentionSchedule

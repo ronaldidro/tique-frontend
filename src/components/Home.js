@@ -4,7 +4,7 @@ import CircularSpinner from './CircularSpinner'
 import Company from './Company'
 
 const Home = () => {
-  const companies = useResource('/companies')
+  const companies = useResource('/api/companies')
 
   if (!Object.keys(companies).length) return <CircularSpinner />
 

@@ -4,7 +4,7 @@
       "name": "Sarcletti",
       "description": "Sarcletti nació en Perú hace más de 20 años, como una heladería-cafetería de calidad",
       "address": "Av. Javier Prado Este 2060",
-      "servicePlace": "San Borja - Lima",
+      "placeService": "San Borja - Lima",
       "attentionSchedule": [
         {
           "day": "Lunes a Domingo",
@@ -119,14 +119,14 @@
       "name": "Madam Tusan",
       "description": "Fundado en abril 2011. Es un restaurante de comida chino-peruana, conocido en nuestro país como un chifa",
       "address": "Av. General Felipe Salaverry 2470 - 2do nivel, entrada principal",
-      "servicePlace": "C.C Real Plaza Salaverry - Jesús María",
+      "placeService": "C.C Real Plaza Salaverry - Jesús María",
       "id": "628833ddae102b938986b124"
     },
     {
       "name": "Astrid & Gastón",
       "description": "Fue en Julio de 1994 que Astrid&Gastón abrió sus puertas al público en su antiguo local de la calle Cantuarias en Miraflores.",
       "address": "Av. Paz Soldán 290",
-      "servicePlace": "San Isidro, Lima 27 - Perú",
+      "placeService": "San Isidro, Lima 27 - Perú",
       "id": "628833ddae102b938986b124"
     }
   ]

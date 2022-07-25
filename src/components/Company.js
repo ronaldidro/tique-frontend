@@ -25,7 +25,7 @@ const Company = ({ companyData }) => {
         </HStack>
         <HStack>
           <RepeatIcon />
-          <Text noOfLines={2}>{companyData.servicePlace}</Text>
+          <Text noOfLines={2}>{companyData.placeService}</Text>
         </HStack>
       </Box>
     </Box>
