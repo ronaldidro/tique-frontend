@@ -9,7 +9,7 @@ export const sendMessage = orderData => {
   const hour = datetime.split('T')[1]
 
   const messageText = `
-👋 *¡Hola! Estoy usando TiqueApp*${urlLineBreak}${urlLineBreak}
+👋 *¡Hola! Estoy usando Tique App*${urlLineBreak}${urlLineBreak}
 _Te envío el detalle de mi pedido:_${urlLineBreak}${urlLineBreak}
 📆 *Fecha:* ${date}${urlLineBreak}
 ⏰ *Hora:* ${hour}${urlLineBreak}${urlLineBreak}
@@ -26,6 +26,5 @@ ${products
 💰 *Monto total: $ ${totalPrice.toFixed(2)}*${urlLineBreak}${urlLineBreak}
 _Espero su pronta atención_ 🙂
 `
-
   window.open(`https://api.whatsapp.com/send?phone=51990148740&text=${messageText}`, '_blank')
 }

@@ -16,17 +16,19 @@ const Company = ({ companyData }) => {
     >
       <Image borderTopRadius="xl" src="https://bit.ly/sage-adebayo" alt="Dan Abramov" />
       <Box padding={3}>
-        <Heading size="md" paddingBottom={2}>
+        <Heading size="md" paddingBottom={[0, 2]} textAlign={['center', 'left']}>
           {companyData.name}
         </Heading>
-        <HStack paddingBottom={2}>
-          <RepeatIcon />
-          <Text noOfLines={2}>{companyData.address}</Text>
-        </HStack>
-        <HStack>
-          <RepeatIcon />
-          <Text noOfLines={2}>{companyData.placeService}</Text>
-        </HStack>
+        <Box display={['none', 'block']}>
+          <HStack paddingBottom={2}>
+            <RepeatIcon />
+            <Text noOfLines={2}>{companyData.address}</Text>
+          </HStack>
+          <HStack>
+            <RepeatIcon />
+            <Text noOfLines={2}>{companyData.placeService}</Text>
+          </HStack>
+        </Box>
       </Box>
     </Box>
   )
