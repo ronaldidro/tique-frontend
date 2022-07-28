@@ -1,9 +1,9 @@
-import { SearchIcon } from '@chakra-ui/icons'
-import { Box, Input, InputGroup, InputLeftElement, Select } from '@chakra-ui/react'
+import { Box, Select } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { filterChange } from '../reducers/filterReducer'
 import { getProducts } from '../utils'
+import SearchField from './SearchField'
 
 const Filters = () => {
   const dispatch = useDispatch()
@@ -16,12 +16,13 @@ const Filters = () => {
 
   return (
     <Box display={{ md: 'flex' }} marginY={2}>
-      <InputGroup width={['100%', '65%']} marginRight={[0, 2]} marginBottom={[2, 0]}>
-        <InputLeftElement pointerEvents="none">
-          <SearchIcon />
-        </InputLeftElement>
-        <Input placeholder="Buscar producto" onChange={handleProductSearch} />
-      </InputGroup>
+      <SearchField
+        placeholder="Buscar producto"
+        handleSearch={handleProductSearch}
+        width={['100%', '65%']}
+        marginRight={[0, 2]}
+        marginBottom={[2, 0]}
+      />
       <Select placeholder="Categorías" width={['100%', '35%']} onChange={handleCategoryChange}>
         {getProducts().map(category => (
           <option key={category.id} value={category.id}>

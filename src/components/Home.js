@@ -1,8 +1,8 @@
-import { SearchIcon } from '@chakra-ui/icons'
-import { Box, Input, InputGroup, InputLeftElement, SimpleGrid } from '@chakra-ui/react'
+import { Box, SimpleGrid } from '@chakra-ui/react'
 import { useResource } from '../hooks'
 import CircularSpinner from './CircularSpinner'
 import Company from './Company'
+import SearchField from './SearchField'
 
 const Home = () => {
   const companies = useResource('/api/companies')
@@ -11,12 +11,7 @@ const Home = () => {
 
   return (
     <Box marginY={5}>
-      <InputGroup marginBottom={5}>
-        <InputLeftElement pointerEvents="none">
-          <SearchIcon />
-        </InputLeftElement>
-        <Input placeholder="Buscar" />
-      </InputGroup>
+      <SearchField marginBottom={5} />
       <SimpleGrid columns={[2, 3]} spacing={[5, 10]}>
         {companies.map((company, index) => (
           <Company key={index} companyData={company} />
